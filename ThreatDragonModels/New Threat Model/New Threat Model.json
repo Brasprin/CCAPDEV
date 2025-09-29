@@ -662,6 +662,8 @@
             "tools": {
               "items": [
                 "boundary",
+                "button-remove",
+                "boundary",
                 "button-remove"
               ],
               "name": null
