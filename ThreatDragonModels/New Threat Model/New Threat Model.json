@@ -38,6 +38,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +122,6 @@
               ]
             },
             "id": "9ed91bb9-6919-46bb-bd9e-3a2ca0ba78ff",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
               "name": "Browser Client",
@@ -138,16 +138,16 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Spoofing",
-                  "description": "An attacker may attempt to spoof the Browser Client to impersonate a legitimate user. This could involve forging client requests, hijacking session tokens, or replaying captured credentials, potentially gaining unauthorized access to the web application.",
-                  "mitigation": "Enforce strong authentication\nUse TLS/HTTPS to prevent interception and tampering of client communications.\nApply strict session management\nImplement replay protection (nonces, timestamps).\nValidate input at the server side, not relying solely on client claims.",
+                  "description": "",
+                  "mitigation": "",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 4,
-                  "score": "7"
+                  "score": ""
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 3,
                 "repudiation": 0
               }
             }
@@ -173,6 +173,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -256,7 +257,6 @@
               ]
             },
             "id": "01c6048d-40bb-4b01-85f8-cc051d39c138",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "Web Application",
@@ -272,20 +272,20 @@
               "threats": [
                 {
                   "id": "03cb937f-fc7d-4595-bcf1-80c27f1557fa",
-                  "title": "Spoofing",
+                  "title": "Web Application Spoofing",
                   "status": "Open",
-                  "severity": "High",
+                  "severity": "TBD",
                   "type": "Spoofing",
-                  "description": "An attacker may spoof or impersonate the web application to trick clients or backend services, causing users to interact with a malicious app or exposing sensitive credentials. This undermines trust in the system.",
-                  "mitigation": "Use strong TLS certificates and enforce HTTPS with HSTS.\nApply service authentication and integrity checking between services.",
+                  "description": "",
+                  "mitigation": "",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 5,
-                  "score": "7"
+                  "score": ""
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 3,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -315,6 +315,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -415,14 +416,14 @@
                   "id": "36ff34f9-305b-4dc4-b15f-44a226599c8d",
                   "title": "Authorization Provider Elevation of Privilege",
                   "status": "Open",
-                  "severity": "High",
+                  "severity": "TBD",
                   "type": "Elevation of privilege",
-                  "description": "An attacker may exploit weaknesses in the authorization logic to escalate privileges beyond what they are entitled to, potentially gaining administrative or system-level access.",
-                  "mitigation": "Apply the principle of least privilege.\nImplement role-based access controls with strict validation.\nPerform regular access control reviews and penetration testing.",
+                  "description": "",
+                  "mitigation": "",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 6,
-                  "score": "8"
+                  "score": ""
                 }
               ],
               "threatFrequency": {
@@ -431,10 +432,9 @@
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 1
+                "elevationOfPrivilege": 2
               }
-            },
-            "zIndex": 4
+            }
           },
           {
             "position": {
@@ -462,6 +462,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -545,7 +546,6 @@
               ]
             },
             "id": "3df1dfda-bece-40e2-b2e6-ba4e638edf88",
-            "zIndex": 5,
             "data": {
               "type": "tm.Store",
               "name": "SQL Database\n",
@@ -562,20 +562,20 @@
               "threats": [
                 {
                   "id": "5518ee19-222d-4c97-9420-6f7f363b504d",
-                  "title": "SQL Database Tampering (SQL Injection)",
+                  "title": "SQL Database Tampering",
                   "status": "Open",
-                  "severity": "Critical",
+                  "severity": "TBD",
                   "type": "Tampering",
-                  "description": "An attacker may attempt to impersonate or tamper with the SQL Database connection, leading the application to read/write untrusted or malicious data.",
-                  "mitigation": "Use parameterized queries and prepared statements.\nApply input validation and sanitization on user inputs.\nRestrict database privileges for the application account.\nRestrict DB access to trusted hosts only.\nMonitor and log suspicious DB activities.",
+                  "description": "",
+                  "mitigation": "",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 8,
-                  "score": "9"
+                  "score": ""
                 }
               ],
               "threatFrequency": {
-                "tampering": 2,
+                "tampering": 3,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0
@@ -608,6 +608,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 6,
             "ports": {
               "groups": {
                 "top": {
@@ -707,26 +708,25 @@
               "threats": [
                 {
                   "id": "a4452a6a-6fea-4bd3-89bc-429bd2a8f4eb",
-                  "title": "SQL Database Tampering (SQL Injection)",
+                  "title": "LDAP Tampering",
                   "status": "Open",
-                  "severity": "High",
+                  "severity": "TBD",
                   "type": "Tampering",
-                  "description": "Attackers may tamper with LDAP queries or inject malicious payloads, leading to unauthorized access, altered directory data, or privilege escalation.",
-                  "mitigation": "Validate and sanitize inputs used in LDAP queries.\nUse parameterized LDAP queries\nApply least privilege to LDAP accounts.",
+                  "description": "",
+                  "mitigation": "",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 7,
-                  "score": "8"
+                  "score": ""
                 }
               ],
               "threatFrequency": {
-                "tampering": 1,
+                "tampering": 2,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0
               }
-            },
-            "zIndex": 6
+            }
           },
           {
             "shape": "flow",
@@ -1252,6 +1252,7 @@
             "shape": "trust-boundary-curve",
             "width": 200,
             "height": 100,
+            "zIndex": 11,
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
@@ -1281,13 +1282,13 @@
                 "x": 922,
                 "y": -250
               }
-            ],
-            "zIndex": 11
+            ]
           },
           {
             "shape": "trust-boundary-curve",
             "width": 200,
             "height": 100,
+            "zIndex": 12,
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
@@ -1317,8 +1318,7 @@
                 "x": 426,
                 "y": -246
               }
-            ],
-            "zIndex": 12
+            ]
           }
         ]
       }
