@@ -19,8 +19,8 @@
         "cells": [
           {
             "position": {
-              "x": 139.99999999999972,
-              "y": -79.99999999999957
+              "x": 60,
+              "y": -309.99999999999955
             },
             "size": {
               "width": 160,
@@ -154,8 +154,8 @@
           },
           {
             "position": {
-              "x": 439.99999999999966,
-              "y": -89.99999999999957
+              "x": 549.9999999999997,
+              "y": -319.99999999999955
             },
             "size": {
               "width": 150,
@@ -166,8 +166,8 @@
                 "text": "Web Application"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -264,18 +264,40 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "03cb937f-fc7d-4595-bcf1-80c27f1557fa",
+                  "title": "Spoofing",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "An attacker may spoof or impersonate the web application to trick clients or backend services, causing users to interact with a malicious app or exposing sensitive credentials. This undermines trust in the system.",
+                  "mitigation": "Use strong TLS certificates and enforce HTTPS with HSTS.\nApply service authentication and integrity checking between services.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "7"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
             "position": {
-              "x": 439.99999999999966,
-              "y": -347.99999999999955
+              "x": 549.9999999999997,
+              "y": -590
             },
             "size": {
               "width": 150,
@@ -286,8 +308,8 @@
                 "text": "Authorization Provider"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -383,19 +405,41 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "36ff34f9-305b-4dc4-b15f-44a226599c8d",
+                  "title": "Authorization Provider Elevation of Privilege",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "An attacker may exploit weaknesses in the authorization logic to escalate privileges beyond what they are entitled to, potentially gaining administrative or system-level access.",
+                  "mitigation": "Apply the principle of least privilege.\nImplement role-based access controls with strict validation.\nPerform regular access control reviews and penetration testing.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             },
             "zIndex": 4
           },
           {
             "position": {
-              "x": 704,
-              "y": -79.99999999999957
+              "x": 1090,
+              "y": -309.99999999999955
             },
             "size": {
               "width": 200,
@@ -406,11 +450,13 @@
                 "text": "SQL Database\n"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -507,19 +553,39 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "5518ee19-222d-4c97-9420-6f7f363b504d",
+                  "title": "SQL Database Tampering (SQL Injection)",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "An attacker may attempt to impersonate or tamper with the SQL Database connection, leading the application to read/write untrusted or malicious data.",
+                  "mitigation": "Use parameterized queries and prepared statements.\nApply input validation and sanitization on user inputs.\nRestrict database privileges for the application account.\nRestrict DB access to trusted hosts only.\nMonitor and log suspicious DB activities.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "9"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
             "position": {
-              "x": 716,
-              "y": -347.99999999999955
+              "x": 1090,
+              "y": -580
             },
             "size": {
               "width": 200,
@@ -530,11 +596,13 @@
                 "text": "LDAP"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -630,21 +698,435 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "a4452a6a-6fea-4bd3-89bc-429bd2a8f4eb",
+                  "title": "SQL Database Tampering (SQL Injection)",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Attackers may tamper with LDAP queries or inject malicious payloads, leading to unauthorized access, altered directory data, or privilege escalation.",
+                  "mitigation": "Validate and sanitize inputs used in LDAP queries.\nUse parameterized LDAP queries\nApply least privilege to LDAP accounts.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "zIndex": 6
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "User Sends User Credentials",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "User Sends User Credentials"
+            ],
+            "id": "ebb6acc5-cd13-4094-ac34-93bdab06885e",
+            "source": {
+              "x": 510,
+              "y": -300
+            },
+            "target": {
+              "x": 250,
+              "y": -300
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Insert Feedback Comments",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Insert Feedback Comments"
+            ],
+            "id": "146ca839-f886-4d7e-aaf4-c44941dac189",
+            "source": {
+              "x": 250,
+              "y": -230
+            },
+            "target": {
+              "x": 510,
+              "y": -230
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "User Is Authenticated",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "User Is Authenticated"
+            ],
+            "id": "69313787-5059-45b2-8693-1402e0c52363",
+            "source": {
+              "x": 250,
+              "y": -260
+            },
+            "target": {
+              "x": 510,
+              "y": -260
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Feedback Comments Saved",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Feedback Comments Saved"
+            ],
+            "id": "de50bc93-cfa6-4a72-aafc-307d550048b6",
+            "source": {
+              "x": 500,
+              "y": -200
+            },
+            "target": {
+              "x": 250,
+              "y": -200
+            },
+            "vertices": []
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Generic Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Generic Trust Boundary"
+            ],
+            "id": "26fa4af8-ba56-4f42-af46-c91d04608d0f",
+            "source": {
+              "x": 250,
+              "y": -510
+            },
+            "target": {
+              "x": 900,
+              "y": -490
+            },
+            "vertices": [
+              {
+                "x": 510,
+                "y": -430
+              },
+              {
+                "x": 720,
+                "y": -430
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Verified",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Verified"
+            ],
+            "id": "cf213eff-cff4-472e-9277-88bff559eae3",
+            "source": {
+              "cell": "7f938281-fce2-4b53-ad6d-e2e7ebbe3336",
+              "port": "5653c8bb-5e60-43f0-b467-4f65b233585d"
+            },
+            "target": {
+              "cell": "01c6048d-40bb-4b01-85f8-cc051d39c138",
+              "port": "b5195da5-9ebf-42b9-8a5a-7d74c725a21c"
+            },
+            "vertices": [
+              {
+                "x": 590,
+                "y": -390
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Auth\nVerification",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Auth\nVerification"
+            ],
+            "id": "2211a125-7387-496e-9b1d-683bc812d75d",
+            "source": {
+              "cell": "01c6048d-40bb-4b01-85f8-cc051d39c138",
+              "port": "b5195da5-9ebf-42b9-8a5a-7d74c725a21c"
+            },
+            "target": {
+              "cell": "7f938281-fce2-4b53-ad6d-e2e7ebbe3336",
+              "port": "5653c8bb-5e60-43f0-b467-4f65b233585d"
+            },
+            "vertices": [
+              {
+                "x": 670,
+                "y": -390
+              }
+            ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Generic Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Generic Trust Boundary"
+            ],
+            "id": "c302274f-34a4-4957-b417-a536ceb4c398",
+            "source": {
+              "x": 1022,
+              "y": -598
+            },
+            "target": {
+              "x": 1012,
+              "y": -138
+            },
+            "vertices": [
+              {
+                "x": 922,
+                "y": -478
+              },
+              {
+                "x": 922,
+                "y": -250
+              }
+            ],
+            "zIndex": 11
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Generic Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Generic Trust Boundary"
+            ],
+            "id": "2894b9c1-de5a-48b2-aa94-bf7e096b21e3",
+            "source": {
+              "x": 540,
+              "y": -660
+            },
+            "target": {
+              "x": 530,
+              "y": -50
+            },
+            "vertices": [
+              {
+                "x": 426,
+                "y": -474
+              },
+              {
+                "x": 426,
+                "y": -246
+              }
+            ],
+            "zIndex": 12
           }
         ]
       }
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 4
+    "threatTop": 9
   }
 }
